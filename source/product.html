@@ -1,0 +1,66 @@
+{% paginate products from products.current by theme.products_per_page %}
+
+	{% if products != blank %}
+
+		{% for product in products %}
+			<div class="slideshow-container">
+				<div class="images-inner">
+			  		{% if product.images.size > 0 %}
+			        <div class="slideshow stacked-images">
+					{% endif %}
+			    		{% for image in product.images %}
+			    		<img src="{{ image | product_image_url | constrain: '900' }}" data-src-retina="{{ image | product_image_url | constrain: '1800' }}" alt="Image of {{ product.name | escape }}"/>
+						{% endfor %}
+			        </div>
+			    </div>
+			</div>
+			<div class="row no-margin">
+				<div class="large-3 large-offset-1 columns medium-3 medium-offset-1 no-padding">
+					<div class="badge try-it-out">
+						<img class="badge-shape" src="http://fuzzco.com/wp-content/assets/advice-dice/images/badge-1.svg">
+						<p class="badge-text" id="badge__text--product">try it out!</p>
+					</div>
+				</div>
+				<div class="large-3 medium-4 large-offset-6 columns no-padding">
+					<div class="product-info">
+						<p class="product-info-edition">edition 001:</p>
+						<p class="product-info-name">{{ product.name }}</p>
+						<form method="post" action="/cart">
+							<div class="row no-margin top-margin">
+								<div class="large-5 small-12 columns">
+									<div class="form-item option--quantity">
+									<p><label class="product-quantity">qty:</label>{{ product | product_quantity_input }}</p>
+									</div>
+								</div>
+								<div class="large-5 small-12 columns">
+									<div class="product-meta">
+										<p class="product-price">{{ product.default_price | money_with_sign }}</p>
+									</div>
+								</div>
+							</div>
+							<p class="product-description">{{ product.description }}</p>
+							<div class="product-options">
+							{% if product.has_default_option %}
+					          {{ product.option | hidden_option_input }}
+					        {% else %}
+					           {{ product.options_in_stock | options_select }}
+					        {% endif %}
+			      			</div>
+				  			{% if product.options_in_stock.size > 0 %}
+				  				<p><button class="btn add-to-cart" name="submit" type="submit"><span>Add to cart</span></button></p>
+				  			{% endif %}
+			      		</form>
+			      	</div>
+			      	{% if product.images.size > 1 %}
+				  		<div class="cycle-pager cycle-pager-large"></div>
+				  	{% endif %}
+				</div>
+			</div>
+
+		{% endfor %}
+
+	{% endif %}
+
+{% endpaginate %}
+
+ 

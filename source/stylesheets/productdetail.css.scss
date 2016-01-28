@@ -1,0 +1,196 @@
+
+.slideshow-container {
+	position: absolute;
+	width: 90%;
+	height: 80%;
+	margin-left: 5%;
+	z-index: 1;
+	@media only screen and (max-width: 40em) { 
+		margin-top: 25px;
+	}
+}
+
+.images-inner {
+	position: absolute;
+	width: 100%;
+}
+
+.slideshow {
+	position: relative;
+	overflow: hidden;
+	margin-top: -175px;
+	max-height: 1200px;
+	width: 100%;
+}
+
+.slideshow img {
+	position: absolute;
+	display: block;
+	width: 100%;
+}
+
+.cycle-pager {  
+	position: relative;
+	top: -65px;
+    width: 100%; 
+    z-index: 500;
+}
+
+.cycle-pager-large {
+	@media only screen and (max-width: 640px) {
+		margin-left: 35px;
+		top: -640px;
+		width: auto;
+	}
+	@media only screen and (max-width: 631px) {
+		top: -670px;
+	}
+	@media only screen and (max-width: 534px) {
+		top: -685px;
+	}
+	@media only screen and (max-width: 468px) {
+		top: -705px;
+	}
+	@media only screen and (max-width: 424px) {
+		top: -725px;
+	}
+	@media only screen and (max-width: 375px) {
+		top: -755px;
+	}
+	@media only screen and (max-width: 320px) {
+		top: -795px;
+	}
+
+}
+.cycle-pager span { 
+    font-family: arial; 
+    font-size: 50px; 
+    width: 20px; 
+    height: 20px; 
+    display: inline-block;
+    border: 3px solid black; 
+    cursor: pointer; 
+    border-radius: 50%;
+    margin: 2px;
+}
+.cycle-pager span.cycle-pager-active { 
+	background-color: #FFFF00;
+}
+.cycle-pager > * { 
+	cursor: pointer;
+}
+
+.try-it-out {
+	position: relative;
+	top: 150px;
+	z-index: 5;
+	
+	@media only screen and (max-width: 40em) { 
+		display: none;
+	}
+	
+	#badge__text--product {
+		bottom: 46px;
+		left: 34px;
+	}
+	
+}
+
+.product-info {
+	background-color: #FFFF00;
+    padding: 25px;
+    font-family: "aktiv-grotesk",sans-serif;
+	font-weight: bold;
+	position: relative;   
+	z-index: 5; 
+	top: -80px;
+	
+		@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+			margin-top: 50px;
+		}
+		
+		@media only screen and (max-width: 40em) { 
+			margin-top: 395px;
+			margin-bottom: 100px;
+			top: 0;
+		}
+		@media only screen and (max-width: 468px) {
+			margin-top: 300px;
+		}
+		@media only screen and (max-width: 375px) {
+			margin-top: 275px;
+		}
+		@media only screen and (max-width: 320px) {
+			margin-top: 220px;
+		}
+		
+	p {
+		margin: 0;
+	}
+	
+	.product-info-edition {
+		font-size: 20px;
+	}
+	
+	.product-info-name {
+		font-size: 34px;
+		margin-top: 20px;
+	}
+	
+	.product-quantity {
+		font-size: 20px;
+		display: inline;
+		position: relative;
+		bottom: 6px;
+	}
+	
+	.top-margin{
+		margin-top: 42px;
+	}
+	
+	input {
+		width: 42px;
+		height: 44px;
+		display: inline;
+		margin-left: 5px;
+		background-color: #FFFF00;
+		border: 6px solid black;
+		font-family: "aktiv-grotesk",sans-serif;
+		font-weight: bold;
+		text-align: center;
+		font-size: 34px;
+		@media only screen and (max-width: 768px) {
+			font-size: 30px;
+		}
+	}
+	
+	.product-price {
+		display: inline;
+		text-align: right;
+		font-size: 34px;
+	}
+	
+	.product-description {
+		font-size: 20px;
+		margin-top: 34px;
+		padding-right: 20px;
+		@media screen and (max-width: 1250px) {
+			font-size: 16px;
+		}
+	}
+	
+	.add-to-cart {
+		font-weight: bold;
+		font-size: 34px;
+		margin-top: 20px;
+		border: 6px solid black;
+		padding: 5px 10px 5px 10px;
+		background-color: #FFFF00;
+		&:hover {
+			color: white;
+			border-color: white;
+		}
+		
+	}
+	
+}

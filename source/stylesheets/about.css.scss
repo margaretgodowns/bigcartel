@@ -1,0 +1,157 @@
+#About {
+	position: absolute;
+    height: 100%;
+    min-height: 1122px;
+    width: 100%;
+    background: linear-gradient(to right, white 0%,white 50%,#000000 50%,#FFFF00 50%,#FFFF00 100%);
+	@media only screen and (max-width: 40em) { 
+		min-height: 1022px;
+	}
+}
+
+.badge-text_about {
+	bottom: 32px;
+    left: 26px;
+}
+
+#black-badge {
+	
+	p {
+		color: yellow;	
+	}
+		
+}
+
+.badge-text_social {
+	bottom: 34px;
+    left: 28px;
+}
+
+#social-badge {
+	top: 50px;
+	
+	p {
+		transform: rotate(18deg);	
+	}
+	
+	@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+		left: 0;
+	}
+	
+}
+
+.about {
+	font-size: 34px;
+	font-family: "aktiv-grotesk",sans-serif;
+	font-weight: bold;
+	position: relative;
+	@media only screen and (max-width: 880px) {
+		font-size: 28px;
+	}
+	
+	a {
+		&:hover {
+			border-bottom: 4px solid black;
+		}
+	}
+	
+	.about-social-list {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.about-description {
+		@media only screen and (max-width: 720px) {
+			margin: 0 auto;
+			margin-top: 25px;
+			width: 75%;
+		}
+	}
+	.signup-form {
+		
+		input {
+			width: 70%;
+			border: none;
+		    border-bottom: 6px solid black;
+		    text-align: center;
+		    font-size: 34px;
+		    font-family: "aktiv-grotesk",sans-serif;
+			font-weight: bold;
+			background: #FFFF00;
+			@media only screen and (max-width: 880px) {
+				font-size: 28px;
+			}
+		}
+		::-webkit-input-placeholder {
+			color: black;
+		}
+		:-moz-placeholder { /* Firefox 18- */
+		   color: black;  
+		}
+		
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: black;  
+		}
+		
+		:-ms-input-placeholder {  
+		   color: black;  
+		}
+		
+		.empty {
+			margin-top: 250px;
+			@media only screen and (max-width: 40em) { 
+				margin-top: 0;
+			}
+		}
+		
+		.confirmation {
+			margin-top: 250px;
+			@media only screen and (max-width: 40em) { 
+				margin-top: 0;
+			}
+		}	
+			
+		.button {
+			display: block;
+			margin: 0 auto;
+			margin-top: 25px;
+		    background-color: black;
+		    border: none;
+		    color: #FFFF00;
+			font-weight: bold;
+			padding: 10px;
+			&:hover {
+				background-color: white;
+			}
+		}
+		
+	}	
+
+}
+
+.flex-container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.flex-container-badge_right {
+	justify-content: flex-end;
+	padding-right: 15%;
+}
+
+.flex-container-badge_left {
+	justify-content: flex-start;
+	margin-top: -5%;
+	padding-left: 20%;
+}
+.flex-item {
+	flex: 3;
+	align-self: center;
+	@media only screen and (max-width: 720px) {
+		margin-top: 50px;
+		flex: 1 100%;
+	}
+}

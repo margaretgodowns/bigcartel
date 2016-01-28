@@ -1,0 +1,218 @@
+/* LAYOUT
+--------------------------------------------- */
+
+.stop-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+section {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.intro {
+  z-index: 2;
+}
+body.dice-visible {
+  background: #FFFF00;
+}
+.dice {
+  display: none;
+  z-index: 1;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+}
+.dice:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+}
+.mobile-dice {
+  display: none;
+  z-index: 1;
+}
+.actions {
+  z-index: 8;
+}
+.dice-visible .side-label {
+  background: #F72E2A;
+}
+.dice-visible .side-label a {
+  color: #ffffff;
+}
+.dice-visible .side-label:hover a {
+  color: #F72E2A;
+}
+.side-label:hover {
+  background: #FFFF00;
+}
+.side-label-top {
+  width: 250px;
+  top: 20px;
+  left: 50%;
+  margin-left: -125px;
+}
+.side-label-right {
+  width: 130px;
+  top: 50%;
+  right: -25px;
+  transform:rotate(90deg);
+  -ms-transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+}
+.side-label-bottom {
+  width: 170px;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -85px;
+}
+.side-label-left {
+  width: 130px;
+  top: 50%;
+  left: -25px;
+  transform:rotate(-90deg);
+  -ms-transform:rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+}
+.colophon {
+  background: #FFFFFF;
+  display: block;
+  font-size: 1.2em;
+  font-weight: normal;
+  position: absolute;
+  padding: 5px 20px;
+  width: 460px;
+  left: 50%;
+  margin-left: -230px;
+  line-height: 2;
+  bottom: 10px;
+  z-index: 10;
+}
+.colophon li {
+  display: inline-block;
+  margin: 0 8px;
+}
+.dice-visible .colophon {
+  background: #F72E2A;
+  color: #ffffff;
+}
+.dice-visible .colophon a {
+  color: #ffffff;
+}
+.wordmark {
+  display: block;
+  height: 20px;
+  width: 88px;
+  background-image: url(../img/wordmark.svg);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-indent: -999px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* DICE
+--------------------------------------------- */
+#canvas {
+  position: relative;
+  z-index: 1;
+}
+.shape-instructions {
+  z-index: 3;
+  top: 30%;
+  left: auto;
+  right: 20%;
+}
+.shape-instructions div {
+  color: #F72E2A;
+}
+
+
+
+@media only screen 
+and (max-width : 1100px) {
+
+  .side-label-top:hover {
+    background: none;
+  }
+  .dice-visible .side-label-top:hover a {
+    color: #FFFFFF;
+  }
+  .shuffle {
+    position: relative;
+    top: -120px;
+    margin: 0;
+  }
+
+}
+
+
+@media only screen 
+and (max-width : 880px) {
+
+  .valign {
+    padding: 0 100px; 
+  }
+  .shuffle {
+    top: 0;
+  }
+
+}
+
+
+@media only screen 
+and (max-width : 700px) {
+
+  h1 {
+    font-size: 2.8em;
+  }
+  section {
+    height: auto;
+    position: relative;
+  }
+  .stage {
+    height: auto;
+  }
+  .intro .valign-wrap {
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .valign {
+    padding: 0 20px; 
+  }
+  .side-label-top {
+    position: static;
+    text-align: center;
+    padding: 30px 0;
+    margin: 0;
+    width: 100%;
+  }
+  .side-label-left,
+  .side-label-right,
+  .side-label-bottom {
+    position: static;
+    margin: 0 auto;
+    transform:rotate(0deg);
+    -ms-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+  }
+  .side-label-right {
+    margin-top: 30px;
+  }
+  .colophon {
+    margin: 30px 0 0 0;
+    width: auto;
+    padding: 0 20px 30px 20px;
+    position: static;
+  }
+
+}
+
+@media only screen 
+and (max-width : 420px) {
+
+
+}

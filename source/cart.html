@@ -1,0 +1,105 @@
+<div class="cart-row">
+	
+	{% if cart.items != blank %}
+	
+	<div class="row cart-key">
+		<div class="large-4 medium-4 small-4 columns">
+			<p>Product</p>
+		</div>
+		<div class="large-2 medium-2 small-2 columns">
+			<p>Price</p>
+		</div>
+		<div class="large-2 medium-2 small-2 columns">
+			<p>Quantity</p>
+		</div>
+		<div class="large-2 medium-2 small-2 columns">
+			<p>Total</p>
+		</div>
+	</div>
+	<div class="row">
+		<form class="cart-container" method="post" action="/cart">
+	
+				
+			{% for item in cart.items %}
+			
+			<ul class="unstyled">
+				<li class="cart-item">
+					<div class="large-2 medium-2 small-3 columns">
+						<a href="{{ item.product.url }}">
+<!-- 							<img class="cart-item-image" src="{{ item.product.image | product_image_url size:"thumb" }}"> -->
+							<img class="cart-item-image" src="http://fuzzco.com/wp-content/assets/advice-dice/images/cart-dice.png">
+						</a>
+					</div>
+					<div class="large-2 medium-2 small-4 columns">
+						<h2 class="cart-item-name">
+							<a href="{{ item.product.url }}">
+								
+								{{ item.product.name }}
+								{% unless item.product.has_default_option %}
+								<em>{{ item.option.name }}</em>
+								{% endunless %}
+							
+							</a>
+						</h2>
+					</div>
+					<div class="large-2 medium-2 small-3 columns">
+						<p class="price-details" id="unit-price">
+							
+							{{ item.unit_price | money_with_sign }}
+							
+						</p>
+					</div>
+					<div class="large-2 medium-2 small-3 columns">
+						<p class="price-details" id="unit-quantity">
+							
+							{{ item | item_quantity_input }}
+							
+						</p>
+					</div>
+					<div class="large-1 medium-1 small-0 columns"></div>
+					<div class="large-3 medium-3 small-3 columns">
+						<p class="price-details" id="item-price">
+							
+							{{ item.price | money_with_sign }}
+							
+							<a href="#" class="remove">&times;</a>
+						</p>
+					</div>
+				</li>
+			</ul>
+			{% endfor %}
+			
+			
+			<div class="row total-area">
+				<div class="large-2 large-offset-7 small-6 columns">
+					<p>Subtotal</p>
+				</div>
+				<div class="large-2 columns small-6 ">
+					<p>{{ cart.total | money_with_sign }}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-5 columns">
+					<a href="/product">
+						<p id="continue-shopping">Continue Shopping</p>
+					</a>
+				</div>
+				<div class="large-2 columns"></div>
+				<div class="large-3 columns"></div>
+				<div class="large-2 columns">
+					<button type="submit" name="update" title="Update" id="update-button">Update Cart</button>
+					<button type="submit" name="checkout" title="Checkout" id="checkout-button">Checkout Now</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+{% else %}
+
+	<div class="empty">
+		<p><strong>Your cart is empty!</strong> Sounds like a good time to <a href="/">start shopping &rarr;</a></p>
+	</div>
+	
+{% endif %}
+
+</div>

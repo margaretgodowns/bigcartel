@@ -1,0 +1,26 @@
+{% paginate products from products.current by theme.products_per_page %}
+
+	{% if products != blank %}
+
+		{% for product in products %}
+		<div class="home-flex-container">
+			<div class="badge-container">
+				<div class="badge home-badge">
+					<img class="badge-shape" src="http://fuzzco.com/wp-content/assets/advice-dice/images/badge-1.svg">
+					<p class="badge-text">As seen<br/>on this<br/>website!</p>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="circular-cta">
+				<h2 class="circular-cta-text">{{product.name}} &#45; {{product.name}} &#45; {{product.name}} &#45;</h2>
+				<div class="circular-cta-link">
+					<img class="circular-cta-link-dice" src="http://fuzzco.com/wp-content/assets/advice-dice/images/dice.svg">
+					<a class="circular-cta-link-text" href="/product/test-dice">buy now!</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+	{% endif %}
+
+{% endpaginate %}
